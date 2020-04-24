@@ -11,9 +11,10 @@ public class Controller {
 			System.out.println("MAIN MENU");
 			System.out.println("1. Add Employee");
 			System.out.println("2. Display Records");
-			System.out.println("3.Search Employee");
-			System.out.println("4.Exit");
-			System.out.print("Enter your choice (1..4) : ");
+			System.out.println("3.Delete Records");
+			System.out.println("4.Search Employee");
+			System.out.println("5.Exit");
+			System.out.print("Enter your choice (1..5) : ");
 			ui  = sc.nextInt();
 			switch(ui)
 			{
@@ -39,11 +40,16 @@ public class Controller {
 					er.displayAll();
 				break;
 				case 3:
+					System.out.println("Enter Employee ID for the record to be deleted : ");
+					int delete_id = sc.nextInt();
+					er.delete(delete_id);
+				break;
+				case 4:
 					System.out.println("Enter Employee ID : ");
 					int search_id = sc.nextInt();
 					er.find(search_id);
 				break;
-				case 4:
+				case 5:
 					System.exit(0);
 				break;
 				default:
